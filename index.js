@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import path from 'path';
+import 'dotenv/config';
+import './src/database/dbConnection';
 
 // usar un puerto
 const app =express();
