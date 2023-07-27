@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import path from 'path';
+import 'dotenv/config';
+import './src/database/dbConnection';
+
 
 // usar un puerto
 const app =express();
@@ -19,3 +22,4 @@ console.log(path.join(__dirname, '/public'));
 app.use(express.static(path.join(__dirname, '/public')))
 
 //https://localhost:4000
+
