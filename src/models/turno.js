@@ -6,7 +6,7 @@ const turnoSchema = new Schema ({
         minLenght: 2,
         maxLenght: 50,
         required: true,
-        unique: true
+       
     },
     detalleCita: {
         type: String,
