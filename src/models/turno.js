@@ -27,16 +27,16 @@ const turnoSchema = new Schema ({
         required: true,
     },
     hora: {
-        type: Date,        
+        type: String,        
         required: true,
         validate: {
             validator: function (value) {
-              const regex = /^(?:[01]\d|2[0-3]):[0-5]\d$/;
+              const regex = /^(8:30|9:30|10:30|11:30|12:30|13:30|14:30|15:30)$/;
               return regex.test(value);
             },
-            message: 'El formato de hora debe ser HH:mm'
+            message: 'La hora seleccionada no es válida'
           }
-        },
+    },
     fecha: {
         type: Date,        
         required: true,
