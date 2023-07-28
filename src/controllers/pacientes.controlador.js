@@ -11,3 +11,19 @@ export const obtenerPacientes = async (req, res)=>{
         });
     }
 };
+
+export const crearPaciente = async (req, res)=>{
+    try {
+        
+        const pacienteNuevo = new Paciente(req.body);
+        await pacienteNuevo.save();
+        res.status(201).json({
+            mensaje: 'El paciente se creo correctamente',
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(404).json({
+            mensaje: 'Error al crear paciente',
+        });
+    }
+}
