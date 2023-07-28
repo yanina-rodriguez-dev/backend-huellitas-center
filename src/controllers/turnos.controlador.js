@@ -22,3 +22,17 @@ export const obtenerTurno = async (req, res)=>{
     })
   }
 }
+export const crearTurno = async(req, res)=>{
+  try{
+  const nuevoTurno = new Turno(req.body);
+  await nuevoTurno.save();
+  res.status(201).json ({
+    mensaje: 'El turno fue creado de manera exitosa',
+  })
+  }catch(error){
+    console.log(error);
+    res.status(404).json({
+      mensaje:'Error en la creacion del turno',
+    });
+  }
+}
