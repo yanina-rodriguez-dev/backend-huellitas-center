@@ -12,6 +12,18 @@ export const obtenerPacientes = async (req, res)=>{
     }
 };
 
+export const obtenerPaciente = async (req, res)=>{
+    try {
+        const paciente = await Paciente.findById(req.params.id);
+        res.status(200).json(paciente);
+    } catch (error) {
+        console.log(error);
+        res.status(404).json({
+            mensaje: 'No se encontro el paciente',
+        });
+    }
+};
+
 export const crearPaciente = async (req, res)=>{
     try {
         
