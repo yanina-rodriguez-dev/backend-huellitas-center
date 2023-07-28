@@ -1,4 +1,5 @@
 import { check } from "express-validator";
+import resultadoValidacion from "./resultadoValidacion";
 
 const validarPaciente = [
     check("nombreDueno")
@@ -35,7 +36,8 @@ const validarPaciente = [
     .notEmpty()
     .withMessage("La raza del paciente es obligatoria")
     .isLength({min: 2, max: 50})
-    .withMessage("La raza del paciente debe tener entre 2 y 50 carateres")
+    .withMessage("La raza del paciente debe tener entre 2 y 50 carateres"),
+    (req, res, next)=>{resultadoValidacion(req, res, next)}
 ]
 
 export default validarPaciente;
