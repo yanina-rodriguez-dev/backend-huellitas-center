@@ -35,6 +35,9 @@ export const crearUsuario = async (req, res) => {
         }
         // console.log(req.body);
         const usuarioNuevo = new Usuario(req.body);
+        const salt = bcrypt.genSaltSync(10);
+        usuarioNuevo.password = bcrypt.hashSync(req.body.password, salt);
+
         await usuarioNuevo.save();
         res.status(201).json({
             mensaje: 'El usuario se creo correctamente',
