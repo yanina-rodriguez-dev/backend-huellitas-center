@@ -22,5 +22,5 @@ console.log(path.join(__dirname, '/public'));
 app.use(express.static(path.join(__dirname, '/public')))
 
 //rutas
-//https://localhost:4000
+//https://localhost:4000/apipaciente/pacientes
 app.use('/apipaciente', pacientesRouter);
