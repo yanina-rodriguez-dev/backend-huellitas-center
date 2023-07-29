@@ -6,6 +6,6 @@ import validarPaciente from "../helpers/validacionPaciente";
 const router = Router();
 
 router.route("/pacientes").get(obtenerPacientes).post(validarPaciente,crearPaciente);
-router.route("/pacientes/:id").get(obtenerPaciente).delete(borrarPaciente);
+router.route("/pacientes/:id").get(obtenerPaciente).delete(borrarPaciente).put(editarPaciente);
 
 export default router;
