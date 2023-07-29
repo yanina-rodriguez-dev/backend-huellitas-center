@@ -5,7 +5,7 @@ import path from 'path';
 import 'dotenv/config';
 import './src/database/dbConnection';
 import pacientesRouter from './src/routes/pacientes.routes';
-import turnosRoter from './src/routes/turnos.routes';
+import turnosRouter from './src/routes/turnos.routes';
 
 // usar un puerto
 const app =express();
@@ -23,6 +23,6 @@ console.log(path.join(__dirname, '/public'));
 app.use(express.static(path.join(__dirname, '/public')))
 
 //rutas
-//https://localhost:4000
+//http://localhost:4000/
 app.use('/apipaciente', pacientesRouter);
-app.use('/appiturno', turnosRoter );
+app.use('/apiturno', turnosRouter );
