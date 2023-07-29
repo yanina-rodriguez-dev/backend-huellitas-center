@@ -3,12 +3,12 @@ import {
   crearUsuario,
   obtenerUsuario,
   obtenerUsuarios,
-  login
-} from "../controllers/usuarios.controllers";
+//   login
+} from "../controllers/usuarios.controlador";
 
 const router = Router();
 
-router.route("/").get(obtenerUsuarios).post(login);
+router.route("/").get(obtenerUsuarios);
 router.route("/nuevo").post(crearUsuario);
 router.route("/usuario/:id").get(obtenerUsuario);
 
