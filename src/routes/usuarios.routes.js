@@ -3,13 +3,14 @@ import {
   crearUsuario,
   obtenerUsuario,
   obtenerUsuarios,
-//   login
+  login
 } from "../controllers/usuarios.controlador";
+import validarUsuario from "../helpers/validacionUsuario";
 
 const router = Router();
 
-router.route("/").get(obtenerUsuarios);
-router.route("/nuevo").post(crearUsuario);
+router.route("/").get(obtenerUsuarios).post(login);
+router.route("/nuevo").post(validarUsuario, crearUsuario);
 router.route("/usuario/:id").get(obtenerUsuario);
 
-export default router;
+export default router
