@@ -23,6 +23,8 @@ console.log(path.join(__dirname, '/public'));
 app.use(express.static(path.join(__dirname, '/public')))
 
 //rutas
+//https://localhost:4000/apipaciente/pacientes
 //http://localhost:4000/
+
 app.use('/apipaciente', pacientesRouter);
 app.use('/apiturno', turnosRouter );
