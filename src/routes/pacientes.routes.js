@@ -1,7 +1,5 @@
 import { Router } from "express";
 import { crearPaciente, obtenerPaciente, obtenerPacientes, borrarPaciente, editarPaciente } from "../controllers/pacientes.controlador";
-import { obtenerTurnos } from "../controllers/turnos.controlador";
-import { crearPaciente, obtenerPaciente, obtenerPacientes } from "../controllers/pacientes.controlador";
 import validarPaciente from "../helpers/validacionPaciente";
 
 
