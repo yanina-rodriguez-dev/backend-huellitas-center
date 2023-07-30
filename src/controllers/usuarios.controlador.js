@@ -52,6 +52,17 @@ export const crearUsuario = async (req, res) => {
   }
 };
 
+export const editarTurno = async (req, res)=>{
+  try{
+  await Usuario.findByIdAndUpdate(req.params.id, req.body);
+  res.status(200).json({
+    mensaje:'El usuario no pudo ser modificado'
+  });
+  }catch(error){
+    console.log(error)
+  }
+}
+
 export const login = async (req, res) => {
   try {
     // buscar si existe el email en nuestra collection de usuarios
