@@ -34,7 +34,7 @@ export const obtenerTurno = async (req, res)=>{
   }catch(error){
     console.log(error);
     res.status(404).json({
-      mensaje:'Error al crear el turno',
+      mensaje:'Se produjo un error al buscar el turno',
     })
   }
 }
