@@ -3,32 +3,32 @@ import { Schema, model } from 'mongoose';
 const usuarioSchema = new Schema({
     nombreUsuario:{
         type: String,
-        minLength:3,
+        minLength:4,
         maxLength:30,
         required:true
     },
     direccion:{
         type: String,
-        minLength:2,
-        maxLength:20,
+        minLength:4,
+        maxLength:32,
         required:true
     },
     telefono:{
         type: Number,
-        minLength:16,
-        maxLength:20,
+        minLength:2,
+        maxLength:16,
         required:true
     },
     dni:{
         type: Number,
-        minLength:6,
-        maxLength:20,
+        minLength:4,
+        maxLength:16,
         required:true
     },
     email:{
         type: String,
-        minLength:10,
-        maxLength:30,
+        minLength:8,
+        maxLength:32,
         required:true,
         unique:true
     },

@@ -26,16 +26,13 @@ export const obtenerUsuario = async (req, res) => {
 };
 export const crearUsuario = async (req, res) => {
   try {
-    // verificar si el email existe
     let usuario = await Usuario.findOne({ email: req.body.email });
     if (usuario) {
       return res
         .status(400)
         .json({ mensaje: "Ya existe un usuario con el mail enviado" });
     }
-    // console.log(req.body);
     const usuarioNuevo = new Usuario(req.body);
-    // Encriptar la contraseña
     const salt = bcrypt.genSaltSync(10);
     usuarioNuevo.password = bcrypt.hashSync(req.body.password, salt);
     await usuarioNuevo.save();
@@ -50,56 +47,47 @@ export const crearUsuario = async (req, res) => {
   }
 };
 
-export const editarUsuario = async (req, res)=>{
-  try{
-  await Usuario.findByIdAndUpdate(req.params.id, req.body);
-  res.status(200).json({
-    mensaje:'El usuario fue creado de manera exitosa'
-  });
-  }catch(error){
+export const editarUsuario = async (req, res) => {
+  try {
+    await Usuario.findByIdAndUpdate(req.params.id, req.body);
+    res.status(200).json({
+      mensaje: "El usuario fue editado de manera exitosa",
+    });
+  } catch (error) {
     console.log(error);
     res.status(404).json({
-      mensaje: 'El usuario no pudo ser modificado '
-    })
+      mensaje: "El usuario no pudo ser modificado ",
+    });
   }
-}
+};
 
-export const eliminarUsuario = async (req, res)=>{
-  try{
+export const eliminarUsuario = async (req, res) => {
+  try {
     await Usuario.findByIdAndDelete(req.params.id);
     res.status(200).json({
-      mensaje: 'El usuario fue eliminado de manera exitosa'
+      mensaje: "El usuario fue eliminado de manera exitosa",
     });
-  }catch(error){
+  } catch (error) {
     console.log(error);
     res.status(404).json({
-      mensaje: 'El usuario no pudo ser eliminado'
-    })
+      mensaje: "El usuario no pudo ser eliminado",
+    });
   }
-}
-
+};
 
 export const login = async (req, res) => {
   try {
-    // buscar si existe el email en nuestra collection de usuarios
     let usuario = await Usuario.findOne({ email: req.body.email });
-    // si el usuario No existe
     if (!usuario) {
-      return res
-        .status(404)
-        .json({ mensaje: "Correo o contraseña invalido - correo" });
+      return res.status(404).json({ mensaje: "Correo o contraseña invalido" });
     }
-    // Preguntar si la contraseña corresponde con el usuario encontrado
     const passwordValido = bcrypt.compareSync(
       req.body.password,
       usuario.password
-    ); // devuelve true si los dos pasos son iguales, caso contrario false
+    );
     if (!passwordValido) {
-      return res
-        .status(400)
-        .json({ mensaje: "Correo o contraseña invalido - contraseña" });
+      return res.status(400).json({ mensaje: "Correo o contraseña invalido" });
     }
-    // Responder al frotend que debe loguear el usuario
     res.status(200).json({
       mensaje: "Usuario autenticado correctamente",
       nombreUsuario: usuario.nombreUsuario,

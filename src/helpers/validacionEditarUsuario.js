@@ -1,26 +1,12 @@
 import { check } from "express-validator";
 import resultadoValidacion from "./resultadoValidacion";
 
-const validarUsuario = [
+const validarEditarUsuario = [
   check("nombreUsuario")
     .notEmpty()
     .withMessage("El nombre del usuario es obligatorio")
     .isLength({ min: 2, max: 50 })
     .withMessage("El nombre debe tener entre 2 y 50 carateres"),
-  check("email")
-    .notEmpty()
-    .withMessage("El email es obligatorio")
-    .matches(
-      /^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/
-    )
-    .withMessage("El mail debe cumplir el formato nombre@dominio.com"),
-  check("password")
-    .notEmpty()
-    .withMessage("La contraseña es obligatorio")
-    .matches(/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/)
-    .withMessage(
-      "La contraseña debe tener al entre 8 y 16 caracteres, al menos una minúscula y una mayúscula. NO puede tener otros símbolos"
-    ),
   check("telefono")
     .notEmpty()
     .withMessage("El telefono es obligatorio")
@@ -41,4 +27,4 @@ const validarUsuario = [
   },
 ];
 
-export default validarUsuario;
+export default validarEditarUsuario;
