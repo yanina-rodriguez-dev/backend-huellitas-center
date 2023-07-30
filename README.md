@@ -23,7 +23,11 @@ Este proyecto se ha desarrollado siguiendo la metodología ágil de Scrum, una f
 
 ### Roles en el equipo Scrum
 
-- **Scrum Master**: [Rodriguez Yanina](https://github.com/yanina-rodriguez-dev) - Encargado de garantizar que el equipo Scrum siga la metodología y eliminar obstáculos que puedan afectar la productividad.
+- **Scrum Master 1**: [Rodriguez Yanina](https://github.com/yanina-rodriguez-dev) <br>
+- **Scrum Master 2**:   [Azul D Paul](https://github.com/AzulDP) <br>
+
+ Encargadas de garantizar que el equipo Scrum siga la metodología y eliminar obstáculos que puedan afectar la productividad.
+
 - **Equipo de Desarrollo**: 
 > [Maximiliano Vega](https://github.com/maxivega0)  <br>
 > [Ana Santillan](https://github.com/Ana-Santillan)<br>
