@@ -3,7 +3,6 @@ import bcrypt from "bcrypt";
 
 export const obtenerUsuarios = async (req, res) => {
   try {
-    //pedir a la BD la lista de productos
     const usuarios = await Usuario.find();
     res.status(200).json(usuarios);
   } catch (error) {
@@ -15,7 +14,6 @@ export const obtenerUsuarios = async (req, res) => {
 };
 export const obtenerUsuario = async (req, res) => {
   try {
-    //pedir a la BD la lista de productos
     console.log(req.params.id);
     const usuario = await Usuario.findById(req.params.id);
     res.status(200).json(usuario);
@@ -52,16 +50,34 @@ export const crearUsuario = async (req, res) => {
   }
 };
 
-export const editarTurno = async (req, res)=>{
+export const editarUsuario = async (req, res)=>{
   try{
   await Usuario.findByIdAndUpdate(req.params.id, req.body);
   res.status(200).json({
-    mensaje:'El usuario no pudo ser modificado'
+    mensaje:'El usuario fue creado de manera exitosa'
   });
   }catch(error){
-    console.log(error)
+    console.log(error);
+    res.status(404).json({
+      mensaje: 'El usuario no pudo ser modificado '
+    })
   }
 }
+
+export const eliminarUsuario = async (req, res)=>{
+  try{
+    await Usuario.findByIdAndDelete(req.params.id);
+    res.status(200).json({
+      mensaje: 'El usuario fue eliminado de manera exitosa'
+    });
+  }catch(error){
+    console.log(error);
+    res.status(404).json({
+      mensaje: 'El usuario no pudo ser eliminado'
+    })
+  }
+}
+
 
 export const login = async (req, res) => {
   try {
