@@ -40,7 +40,7 @@ export const obtenerTurno = async (req, res)=>{
 }
 export const editarTurno = async (req, res) => {
   try {
-    await Turno.findByIdAndUpdate(req.params.id, req.body); //en el primer parametro recibimos el id y lo cambiamos por los datos del body
+    await Turno.findByIdAndUpdate(req.params.id, req.body);
     res.status(200).json({
       mensaje: "El turno fue editado correctamente",
     });
