@@ -4,15 +4,11 @@ import {
   obtenerTurno,
   obtenerTurnos,
   editarTurno,
+  borrarTurno
 } from "../controllers/turnos.controlador";
 
 const router = Router();
 router.route("/turnos").get(obtenerTurnos).post(crearTurno).put(editarTurno);
-router.route("/turnos/:id").get(obtenerTurno);
-
-router
-  .route("/turnos/:id")
-  .get(obtenerTurno)  
-  .put(editarTurno);
+router.route("/turnos/:id").get(obtenerTurno).delete(borrarTurno);
 
 export default router;

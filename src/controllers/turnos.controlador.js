@@ -51,3 +51,17 @@ export const editarTurno = async (req, res) => {
     });
   }
 };
+
+export const borrarTurno = async (req, res)=>{
+  try{
+   await Turno.findByIdAndDelete(req.params.id);
+   res.status(200).json({
+    mensaje: 'El turno fue eliminado correctamente',
+  });
+  }catch(error){
+    console.log(error);
+    res.status(404).json({
+      mensaje: 'Error no se pudo eliminar el turno',
+    });
+  }
+}
