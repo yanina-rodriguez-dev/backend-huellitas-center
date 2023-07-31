@@ -34,7 +34,34 @@ export const obtenerTurno = async (req, res)=>{
   }catch(error){
     console.log(error);
     res.status(404).json({
-      mensaje:'Error al crear el turno',
+      mensaje:'Se produjo un error al buscar el turno',
     })
+  }
+}
+export const editarTurno = async (req, res) => {
+  try {
+    await Turno.findByIdAndUpdate(req.params.id, req.body);
+    res.status(200).json({
+      mensaje: "El turno fue editado correctamente",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      mensaje: "Error, no se pudo editar el turno",
+    });
+  }
+};
+
+export const borrarTurno = async (req, res)=>{
+  try{
+   await Turno.findByIdAndDelete(req.params.id);
+   res.status(200).json({
+    mensaje: 'El turno fue eliminado correctamente',
+  });
+  }catch(error){
+    console.log(error);
+    res.status(404).json({
+      mensaje: 'Error no se pudo eliminar el turno',
+    });
   }
 }
