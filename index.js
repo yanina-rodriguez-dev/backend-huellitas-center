@@ -6,6 +6,7 @@ import 'dotenv/config';
 import './src/database/dbConnection';
 import pacientesRouter from './src/routes/pacientes.routes';
 import turnosRouter from './src/routes/turnos.routes';
+import usuariosRouter from './src/routes/usuarios.routes';
 
 // usar un puerto
 const app =express();
@@ -28,3 +29,4 @@ app.use(express.static(path.join(__dirname, '/public')))
 
 app.use('/apipaciente', pacientesRouter);
 app.use('/apiturno', turnosRouter );
+app.use('/apiHuellitas/auth', usuariosRouter );
