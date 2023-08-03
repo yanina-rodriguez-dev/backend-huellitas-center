@@ -91,6 +91,7 @@ export const login = async (req, res) => {
     res.status(200).json({
       mensaje: "Usuario autenticado correctamente",
       nombreUsuario: usuario.nombreUsuario,
+      esAdmin: usuario.esAdmin,
     });
   } catch (error) {
     console.log(error);
