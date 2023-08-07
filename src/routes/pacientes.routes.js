@@ -7,13 +7,14 @@ import {
   editarPaciente,
 } from "../controllers/pacientes.controlador";
 import validarPaciente from "../helpers/validacionPaciente";
+import validarJWT from "../helpers/token-verify";
 
 const router = Router();
 
 router
   .route("/pacientes")
   .get(obtenerPacientes)
-  .post(validarPaciente, crearPaciente);
+  .post([validarJWT,validarPaciente], crearPaciente);
 router
   .route("/pacientes/:id")
   .get(obtenerPaciente)

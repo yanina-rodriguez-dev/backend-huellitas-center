@@ -1,3 +1,4 @@
+import generarJWT from "../helpers/token-sign";
 import Usuario from "../models/usuario";
 import bcrypt from "bcrypt";
 
@@ -88,9 +89,13 @@ export const login = async (req, res) => {
     if (!passwordValido) {
       return res.status(400).json({ mensaje: "Correo o contraseña invalido" });
     }
+    const token = await generarJWT(usuario.nombreUsuario)
     res.status(200).json({
       mensaje: "Usuario autenticado correctamente",
       nombreUsuario: usuario.nombreUsuario,
+      esAdmin: usuario.esAdmin,
+      email : usuario.email,
+      token
     });
   } catch (error) {
     console.log(error);
