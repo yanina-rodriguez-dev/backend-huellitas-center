@@ -18,7 +18,7 @@ router
 router
   .route("/pacientes/:id")
   .get(obtenerPaciente)
-  .delete(borrarPaciente)
-  .put(editarPaciente);
+  .delete(validarJWT,borrarPaciente)
+  .put([validarJWT,validarPaciente], editarPaciente);
 
 export default router;
