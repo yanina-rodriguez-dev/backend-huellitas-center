@@ -96,6 +96,7 @@ export const login = async (req, res) => {
       esAdmin: usuario.esAdmin,
       email : usuario.email,
       token
+
     });
   } catch (error) {
     console.log(error);
