@@ -9,15 +9,16 @@ import {
 } from "../controllers/usuarios.controlador";
 import validarEditarUsuario from "../helpers/validacionEditarUsuario";
 import validarUsuario from "../helpers/validacionUsuario";
+import validarJWT from "../helpers/token-verify";
 
 const router = Router();
 
 router.route("/").get(obtenerUsuarios).post(login);
-router.route("/nuevo").post(validarUsuario, crearUsuario);
+router.route("/nuevo").post([validarJWT,validarUsuario], crearUsuario);
 router
   .route("/usuario/:id")
   .get(obtenerUsuario)
-  .delete(eliminarUsuario)
-  .put(validarEditarUsuario, editarUsuario);
+  .delete(validarJWT,eliminarUsuario)
+  .put([validarJWT,validarEditarUsuario], editarUsuario);
 
 export default router;
