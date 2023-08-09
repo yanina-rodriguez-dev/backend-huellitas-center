@@ -104,8 +104,3 @@ Si deseas contribuir a este proyecto, ¡eres bienvenido! Por favor, crea un Pull
 - [Maximiliano Vega](https://github.com/maxivega0)
 - [Federico Rueda](https://github.com/federl94)
 - [Azul D Paul](https://github.com/AzulDP)
-
-
-## Licencia
-
-
