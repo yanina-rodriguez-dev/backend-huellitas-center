@@ -29,7 +29,6 @@ const turnoSchema = new Schema ({
     hora: {
         type: String,        
         required: true,
-        unique: true,
         validate: {
             validator: function (value) {
                 const regex = /^(8:30|9:30|10:30|11:30|12:30|13:30|14:30|15:30)$/;
