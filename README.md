@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🐾 Veterinaria Huellitas Center - Backend 🐾
 
 ## Descripción
@@ -102,3 +103,5 @@ Si deseas contribuir a este proyecto, ¡eres bienvenido! Por favor, crea un Pull
 - [Maximiliano Vega](https://github.com/maxivega0)
 - [Federico Rueda](https://github.com/federl94)
 - [Azul De Pol](https://github.com/AzulDP)
+=======
+>>>>>>> f9815bcf76ae2c4fb2e2e405714a0d5b77542a95
