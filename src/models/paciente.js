@@ -33,10 +33,22 @@ const pacienteSchema = new Schema({
         maxLength: 60,
         required: true
     },
-    historiaClinica: {
+    nombrePaciente: {
         type: String,
-        minLength: 5,
-        maxLength: 5000,
+        minLength: 2,
+        maxLength: 50,
+        required: true
+    },
+    especie: {
+        type: String,
+        minLength: 2,
+        maxLength: 30,
+        required: true
+    },
+    raza: {
+        type: String,
+        minLength: 2,
+        maxLength: 50,
         required: true
     }
 })

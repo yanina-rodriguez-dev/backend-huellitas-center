@@ -27,6 +27,6 @@ app.use(express.static(path.join(__dirname, '/public')))
 //https://localhost:4000/apipaciente/pacientes
 //http://localhost:4000/
 
-app.use('/centromedico/apipaciente', pacientesRouter);
-app.use('/centromedico/apiturno', turnosRouter );
-app.use('/centromedico/auth', usuariosRouter);
+app.use('/apiHuellitas/apipaciente', pacientesRouter);
+app.use('/apiHuellitas/apiturno', turnosRouter );
+app.use('/apiHuellitas/auth', usuariosRouter );

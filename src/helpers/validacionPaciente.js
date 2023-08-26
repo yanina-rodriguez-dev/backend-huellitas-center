@@ -21,12 +21,22 @@ const validarPaciente = [
     .notEmpty()
     .withMessage("La direccion es obligatoria")
     .isLength({min: 5, max: 60})
-    .withMessage("La direccion debe tener entre 5 y 60 carateres"),    
-    check("historiaClinica")
+    .withMessage("La direccion debe tener entre 5 y 60 carateres"),
+    check("nombrePaciente")
     .notEmpty()
-    .withMessage("La historia clínica del paciente es obligatoria")
-    .isLength({min: 5, max: 5000})
-    .withMessage("La historia clínica debe tener entre 5 y 5000 caracteres"),
+    .withMessage("El nombre del paciente es obligatoria")
+    .isLength({min: 2, max: 50})
+    .withMessage("El nombre del paciente debe tener entre 2 y 50 carateres"),
+    check("especie")
+    .notEmpty()
+    .withMessage("La especie del paciente es obligatoria")
+    .isLength({min: 2, max: 30})
+    .withMessage("La especie del paciente debe tener entre 2 y 30 carateres"),
+    check("raza")
+    .notEmpty()
+    .withMessage("La raza del paciente es obligatoria")
+    .isLength({min: 2, max: 50})
+    .withMessage("La raza del paciente debe tener entre 2 y 50 carateres"),
     (req, res, next)=>{resultadoValidacion(req, res, next)}
 ]
 

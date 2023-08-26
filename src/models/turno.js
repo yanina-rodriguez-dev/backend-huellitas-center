@@ -14,12 +14,18 @@ const turnoSchema = new Schema ({
         maxLenght: 200,
         required: true,        
     },
-    nombreMedico: {
+    nombreVeterinario: {
         type: String,
         minLenght: 2,
         maxLenght: 50,
         required: true,
-    },    
+    },
+    nombreMascota: {
+        type: String,
+        minLenght: 2,
+        maxLenght: 50,
+        required: true,
+    },
     hora: {
         type: String,        
         required: true,
