@@ -31,11 +31,11 @@ const turnoSchema = new Schema ({
         required: true,
         validate: {
             validator: function (value) {
-              const regex = /^(8:30|9:30|10:30|11:30|12:30|13:30|14:30|15:30)$/;
-              return regex.test(value);
+                const regex = /^(8:30|9:30|10:30|11:30|12:30|13:30|14:30|15:30)$/;
+                return regex.test(value);
             },
             message: 'La hora seleccionada no es válida'
-          }
+        }
     },
     fecha: {
         type: Date,        

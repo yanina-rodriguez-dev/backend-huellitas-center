@@ -1,6 +1,4 @@
-# Backend Huellitas Center - Veterinaria
-
-![Huellitas Center Logo]()
+# 🐾 Veterinaria Huellitas Center - Backend 🐾
 
 ## Descripción
 Este es el backend de la aplicación web de Huellitas Center, una veterinaria virtual que ofrece servicios de atención médica para mascotas. El backend está construido con React, Node.js, Express y MongoDB.
@@ -24,14 +22,14 @@ Este proyecto se ha desarrollado siguiendo la metodología ágil de Scrum, una f
 ### Roles en el equipo Scrum
 
 - **Scrum Master 1**: [Rodriguez Yanina](https://github.com/yanina-rodriguez-dev) <br>
-- **Scrum Master 2**:   [Azul D Paul](https://github.com/AzulDP) <br>
+- **Scrum Master 2**:   [Azul De Pol](https://github.com/AzulDP) <br>
 
  Encargadas de garantizar que el equipo Scrum siga la metodología y eliminar obstáculos que puedan afectar la productividad.
 
 - **Equipo de Desarrollo**: 
 > [Maximiliano Vega](https://github.com/maxivega0)  <br>
 > [Ana Santillan](https://github.com/Ana-Santillan)<br>
->[Azul D Paul](https://github.com/AzulDP) <br>
+>[Azul De Pol](https://github.com/AzulDP) <br>
 >[Federico Rueda](https://github.com/federl94)<br>
 >[Rodriguez Yanina](https://github.com/yanina-rodriguez-dev)
 
@@ -103,4 +101,4 @@ Si deseas contribuir a este proyecto, ¡eres bienvenido! Por favor, crea un Pull
 - [Ana Santillan](https://github.com/Ana-Santillan)
 - [Maximiliano Vega](https://github.com/maxivega0)
 - [Federico Rueda](https://github.com/federl94)
-- [Azul D Paul](https://github.com/AzulDP)
+- [Azul De Pol](https://github.com/AzulDP)
